@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAYC is coming back</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: black;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 75vh;
+        }
+        .section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+        #middle-text {
+            position: absolute;
+            font-size: 80px;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff0;
+            animation: bounce 1.5s infinite;
+            transform: rotate(-10deg);
+            z-index: 10;
+            top: 10%;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(-10deg); }
+            50% { transform: translateY(-10px) rotate(-10deg); }
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+            margin-top: 20px;
+        }
+        .buttons a {
+            width: 100px;
+            height: 100px;
+        }
+        .buttons img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .buttons img:hover {
+            transform: scale(1.2);
+        }
+        .wallet-address {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section" id="left"><img id="gif-left" src="giphy1.gif"></div>
+        <div class="section" id="middle"><img id="gif-middle" src="giphy5.gif"><span id="middle-text">BAYC is coming back</span></div>
+        <div class="section" id="right"><img id="gif-right" src="giphy2.gif"></div>
+    </div>
+    
+    <div class="wallet-address">Address: 你的錢包地址將顯示在這裡</div>
+    
+    <div class="buttons">
+        <a href="https://www.youtube.com/watch?v=qt1equGhkQE&ab_channel=YugaLabs" target="_blank">
+            <img src="yt.png" alt="YouTube">
+        </a>
+        <a href="https://x.com/BoredApeYC" target="_blank">
+            <img src="x.png" alt="X">
+        </a>
+    </div>
+    
+    <script>
+        // 定義所有的 GIF 檔案名
+        const gifs = ["giphy1.gif", "giphy2.gif", "giphy3.gif", "giphy4.gif", "giphy5.gif", "giphy6.gif", "giphy7.gif", "giphy8.gif"];
+
+        // 隨機選擇 GIF 並更新每個圖像元素
+        function updateGifs() {
+            document.getElementById("gif-left").src = gifs[Math.floor(Math.random() * gifs.length)];
+            document.getElementById("gif-middle").src = gifs[Math.floor(Math.random() * gifs.length)];
+            document.getElementById("gif-right").src = gifs[Math.floor(Math.random() * gifs.length)];
+        }
+
+        // 每隔 2 秒更新一次 GIF
+        setInterval(updateGifs, 2000);
+    </script>
+</body>
+</html>
